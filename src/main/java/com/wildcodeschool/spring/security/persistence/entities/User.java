@@ -171,7 +171,7 @@ public class User implements UserDetails {
 
     public void setPassword(String password) {
         if (!password.isEmpty()) {
-            this.password = BCryptManagerUtil.passwordencoder().encode(password);
+            this.password = PasswordEncoderFactories.createDelegatingPasswordEncoder().encode(password);
         }
     }
 
